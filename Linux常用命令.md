@@ -107,5 +107,7 @@ systemctl enable frps
 systemctl start frps
 ```
 
+**vps测试**
 
+`wget -qO- bench.sh | bash`
 
