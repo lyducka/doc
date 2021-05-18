@@ -111,3 +111,10 @@ systemctl start frps
 
 `wget -qO- bench.sh | bash`
 
+**解压tar.gz文件**
+
+`tar -zxvf ×××.tar.gz`
+
+**解压tar.bz2文件**
+
+`tar -jxvf ×××.tar.bz2`
