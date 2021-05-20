@@ -118,3 +118,63 @@ systemctl start frps
 **解压tar.bz2文件**
 
 `tar -jxvf ×××.tar.bz2`
+
+#### Screen 命令
+
+`screen -S yourname` #新建一个叫yourname的session
+
+`screen -ls` #列出当前所有的session
+
+`screen -r yourname` #回到yourname这个session
+
+`screen -d yourname` #远程detach某个session
+
+`screen -d -r yourname` #结束当前session并回到yourname这个session
+
+Ctrl+A+D 暂时离开session，不影响当前任务执行
+
+#### 光标快速切换
+
+ctrl+a #行首
+
+ctrl+e #行尾
+
+ctrl+k #删除至行尾
+
+#### Bash历史记录快速补全
+
+1.`vim ~/.bashrc`
+
+```
+#History search
+if [[ $- == *i* ]]
+then
+        bind '"\e[A": history-search-backward'
+        bind '"\e[B": history-search-forward'
+        set show-all-if-ambiguous on
+        set completion-ignore-case on
+fi
+```
+
+注：`show-all-if-ambiguous` 是指tab补全时，按一次tab就会把最长匹配的自动补全
+
+​		`completion-ignore-case` 是指tab补全时，忽略大小写。
+
+2.`source ~/.bashrc`
+
+#### Nginx配置跨域请求 Access-Control-Allow-Origin *
+
+只需要在Nginx的配置文件中配置以下参数：
+
+```
+location / {  
+    add_header Access-Control-Allow-Origin *;
+    add_header Access-Control-Allow-Methods 'GET, POST, OPTIONS';
+    add_header Access-Control-Allow-Headers 'DNT,X-Mx-ReqToken,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Authorization';
+
+    if ($request_method = 'OPTIONS') {
+        return 204;
+    }
+} 
+```
+
