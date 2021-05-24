@@ -162,7 +162,37 @@ fi
 
 2.`source ~/.bashrc`
 
-#### Nginx配置跨域请求 Access-Control-Allow-Origin *
+#### acme.sh申请和nginx证书安装
+
+**申请**
+
+`./acme.sh --issue -d demo.daka.ga --challenge-alias 698423.xyz --dns dns_cf`
+
+**nginx安装证书**
+
+```
+./acme.sh --install-cert -d down.daka.ga \
+ --key-file    /etc/nginx/ssl/down.daka.ga.key \
+ --fullchain-file /etc/nginx/ssl/down.daka.ga.cer \
+ --reloadcmd   "nginx -s reload"
+```
+
+#### Nginx相关
+
+##### **Nginx加密访问**
+
+**生成账号**
+
+`htpasswd -c ./auth_conf ducka` #生成登录的账号密码
+
+**nginx配置**
+
+```
+auth_basic "Auth access! Input your password!";
+auth_basic_user_file /etc/nginx/auth_conf;
+```
+
+##### **Nginx配置跨域请求 Access-Control-Allow-Origin ***
 
 只需要在Nginx的配置文件中配置以下参数：
 
@@ -176,5 +206,15 @@ location / {
         return 204;
     }
 } 
+```
+
+##### Nginx文件目录浏览
+
+放到location下面
+
+```
+autoindex on;  #开启文件目录浏览功能
+autoindex_exact_size on;  #显示文件大小从KB显示
+autoindex_localtime on;  #显示文件修改时间，为服务器本地时间
 ```
 
