@@ -119,6 +119,10 @@ systemctl start frps
 
 `tar -jxvf ×××.tar.bz2`
 
+**清理登录日志btmp**
+
+`echo '' > /var/log/btmp`
+
 #### Screen 命令
 
 `screen -S yourname` #新建一个叫yourname的session
