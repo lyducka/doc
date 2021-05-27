@@ -222,4 +222,3 @@ autoindex_exact_size on;  #显示文件大小从KB显示
 autoindex_localtime on;  #显示文件修改时间，为服务器本地时间
 ```
 
-test 12
