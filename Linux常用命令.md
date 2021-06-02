@@ -170,14 +170,14 @@ fi
 
 **申请**
 
-`./acme.sh --issue -d demo.daka.ga --challenge-alias 698423.xyz --dns dns_cf`
+`./acme.sh --issue -d demo.notdnsapi.com --challenge-alias destination.xyz --dns dns_cf`
 
 **nginx安装证书**
 
 ```
-./acme.sh --install-cert -d down.daka.ga \
- --key-file    /etc/nginx/ssl/down.daka.ga.key \
- --fullchain-file /etc/nginx/ssl/down.daka.ga.cer \
+./acme.sh --install-cert -d down.dk.com \
+ --key-file    /etc/nginx/ssl/down.dk.com.key \
+ --fullchain-file /etc/nginx/ssl/down.dk.com.cer \
  --reloadcmd   "nginx -s reload"
 ```
 
@@ -187,7 +187,7 @@ fi
 
 **生成账号**
 
-`htpasswd -c ./auth_conf ducka` #生成登录的账号密码
+`htpasswd -c ./auth_conf user` #生成登录的账号密码
 
 **nginx配置**
 
