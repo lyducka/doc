@@ -1,4 +1,4 @@
-# N1盒子刷Armbian，看这一篇就够了——Armbian全方位安装指导书（转发自张大妈社区[来杯黄桃酸奶]）
+# N1盒子刷Armbian，看这一篇就够了——Armbian全方位安装指导书（转自张大妈社区[来杯黄桃酸奶]）
 
 **创作立场声明：**一个写完之后很累很累的年轻人
 
@@ -67,7 +67,7 @@ PS：我站真的很多这个方面的文章，但是为了装X，说自己的�
 
 这个软件会提供给我们一共驱动，刷机要用。
 
-[![就是这个adb设备驱动](https://raw.githubusercontent.com/lyducka/pic/master/uPic/5e817d950c1a36232.png_e1080.jpg)](https://post.smzdm.com/p/alpwnxmp/pic_2/)就是这个adb设备驱动
+[![就是这个adb设备驱动](https://raw.githubusercontent.com/lyducka/pic/master/uPic/5e817d950c1a36232.png_e1080.jpg)]就是这个adb设备驱动
 
 
 
