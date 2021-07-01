@@ -192,6 +192,30 @@ fi
 注：在按下 esc键后，会稍等一会才会出现注释，不要着急~~时间很短的
 ```
 
+**nextcloud的https不跳转的问题**
+
+到_data/config/目录，修改config.php文件，最后一行增加
+
+`'overwriteprotocol' => 'https',`
+
+**docker启动openwrt**
+
+`docker network create -d macvlan --subnet=192.168.1.0/24 --gateway=192.168.1.1 -o parent=wlan0 macnet`
+
+ `docker network ls`
+
+`ip link set eth0 promisc on`
+
+`docker run --restart always -d --network macnet --privileged unifreq/openwrt-aarch64 /sbin/init`
+
+**Iperf3 测速**
+
+```
+server：iperf3 -s –D
+单线程：iperf3 -c 10.0.0.3 -b 1000m -t 60 -i 1 –u
+多线程：iperf3 -c 10.0.0.3 -b 1000m -t 60 -i 1 -u -P 2
+```
+
 #### Nginx相关
 
 ##### **Nginx加密访问**
