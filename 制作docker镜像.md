@@ -24,6 +24,7 @@
 
 **6.push**
 
-`docker tag python:3.9.4 registry.cn-shanghai.aliyuncs.com/#NameSpace-zj/python:3.9.4`
+`docker push registry.cn-shanghai.aliyuncs.com/#NameSpace-zj/python:3.9.4`
 
  
+
